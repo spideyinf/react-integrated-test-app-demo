@@ -10,5 +10,5 @@ export interface MovieContextData {
   movies: Movie[];
   user: any;
   appLoading: boolean;
-  setMovies: (movie: Movie) => void;
+  setMovies: (movies: Movie[]) => void;
 }
