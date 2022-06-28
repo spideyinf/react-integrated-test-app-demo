@@ -17,7 +17,7 @@ export const MoviesContext = createContext<MovieContextData>({
 function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [appLoading, setAppLoading] = useState(true);
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<any>(1);
 
   return (
     <React.Suspense fallback={null}>

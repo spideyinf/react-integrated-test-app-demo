@@ -1,19 +1,51 @@
-import { FC, useContext, useEffect, useState } from 'react';
+import { FC, FormEventHandler, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MoviesContext } from '../../App';
+import { fetchVideoInformation, shareMovie } from '../../utils/services';
 
 const SharePage: FC = () => {
-  const handleSubmit = () => null;
   const { user } = useContext(MoviesContext);
-  const [url, setUrl] = useState<string>('');
   const [loading, setLoading] = useState(false);
+  const [url, setUrl] = useState<string>('');
   const navigate = useNavigate();
+
+  const handleSubmit: FormEventHandler = async (e) => {
+    e.preventDefault();
+    if (url.trim()) {
+      setLoading(true);
+      const videoInformation = await fetchVideoInformation(url);
+      if (!videoInformation) {
+        setLoading(false);
+        return alert('Invalid url');
+      }
+
+      const {
+        id,
+        snippet: { title, description }
+      } = videoInformation.items[0];
+      const data = {
+        title,
+        description,
+        sharedBy: user.email,
+        url: `https://www.youtube.com/embed/${id}`
+      };
+      try {
+        await shareMovie(data);
+        setLoading(false);
+        navigate('/');
+        alert('Share movie successfully');
+      } catch (error) {
+        alert('Share movie failed');
+        setLoading(false);
+      }
+    }
+  };
 
   useEffect(() => {
     if (!user) {
       navigate('/');
     }
-  }, [user]);
+  }, [navigate, user]);
 
   return (
     <form
@@ -38,10 +70,10 @@ const SharePage: FC = () => {
             placeholder="youtube.com/watch?v=..."
           />
           <button
-            type="button"
+            disabled={loading}
             className="max-w-lg w-full mt-5 inline-flex justify-center items-center p-3 border border-transparent text-md leading-4 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
-            Share
+            {loading ? 'Loading...' : 'Share'}
           </button>
         </div>
       </div>
