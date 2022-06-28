@@ -12,9 +12,9 @@ const SharePage: FC = () => {
       className="mt-16 mx-auto max-w-xl bg-white border-gray-200 relative border-2 px-8 py-12 rounded-md space-y-4 flex flex-col justify-end"
     >
       <h2 className="rounded-md bg-white px-3 text-xl absolute -top-3 left-4">
-        Share a Youtube Movie
+        Share a Youtube movie
       </h2>
-      <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+      <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start">
         <label htmlFor="url" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
           Youtube URL:
         </label>
@@ -23,7 +23,7 @@ const SharePage: FC = () => {
             type="text"
             name="url"
             id="url"
-            className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
+            className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
             placeholder="youtube.com/watch?v=..."
           />
           <button
