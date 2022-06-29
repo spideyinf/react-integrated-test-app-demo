@@ -1,10 +1,10 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 import SharePage from './pages/SharePage';
-import { getMovies } from './utils/services';
+import { auth } from './utils/firebase';
 import { Movie, MovieContextData } from './utils/types';
 
 export const MoviesContext = createContext<MovieContextData>({
@@ -17,7 +17,16 @@ export const MoviesContext = createContext<MovieContextData>({
 function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [appLoading, setAppLoading] = useState(true);
-  const [user, setUser] = useState<any>(1);
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged(async (authUser) => {
+      if (authUser) {
+        setUser(authUser);
+      }
+      setAppLoading(false);
+    });
+  }, []);
 
   return (
     <React.Suspense fallback={null}>

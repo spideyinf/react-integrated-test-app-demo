@@ -11,6 +11,7 @@ const HomePage: FC = () => {
     if (!movies.length) setLoading(true);
     (async () => {
       const data = await getMovies();
+      console.log('data :', data);
       setMovies(data);
       setLoading(false);
     })();

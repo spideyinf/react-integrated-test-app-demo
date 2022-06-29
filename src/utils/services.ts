@@ -58,6 +58,7 @@ export const loginRegister = async (email: string, password: string) => {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (error: any) {
     const { message } = error;
+    console.log('message :', message);
     if (message && message.includes('auth/user-not-found')) {
       await register(email, password);
     } else {

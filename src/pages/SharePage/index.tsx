@@ -4,7 +4,7 @@ import { MoviesContext } from '../../App';
 import { fetchVideoInformation, shareMovie } from '../../utils/services';
 
 const SharePage: FC = () => {
-  const { user } = useContext(MoviesContext);
+  const { user, appLoading } = useContext(MoviesContext);
   const [loading, setLoading] = useState(false);
   const [url, setUrl] = useState<string>('');
   const navigate = useNavigate();
@@ -18,7 +18,6 @@ const SharePage: FC = () => {
         setLoading(false);
         return alert('Invalid url');
       }
-
       const {
         id,
         snippet: { title, description }
@@ -33,8 +32,8 @@ const SharePage: FC = () => {
         await shareMovie(data);
         setLoading(false);
         navigate('/');
-        alert('Share movie successfully');
       } catch (error) {
+        console.log('error :', error);
         alert('Share movie failed');
         setLoading(false);
       }
@@ -42,10 +41,12 @@ const SharePage: FC = () => {
   };
 
   useEffect(() => {
-    if (!user) {
+    if (!appLoading && !user) {
       navigate('/');
     }
-  }, [navigate, user]);
+  }, [appLoading, user]);
+
+  if (appLoading) return <h2 className="text-center pt-12 text-xl">Loading...</h2>;
 
   return (
     <form

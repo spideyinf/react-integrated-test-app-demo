@@ -11,11 +11,11 @@ function classNames(...classes: string[]) {
 
 const HomeMovieItem: FC<Props> = ({ movie }) => {
   return (
-    <li key={movie.id} className="col-span-1 flex shadow-sm rounded-md">
+    <li key={movie.id} className="col-span-1 flex shadow-sm rounded-md max-w-5xl">
       <iframe
         className={classNames(
           '',
-          'flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md'
+          'flex-shrink-0 flex items-center justify-center text-white text-sm font-medium rounded-l-md'
         )}
         src={movie.url}
         title={movie.title}
@@ -23,13 +23,13 @@ const HomeMovieItem: FC<Props> = ({ movie }) => {
         width="360"
       />
       <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
-        <div className="flex-1 px-4 py-2 truncate">
-          <a href={movie.url} className="text-gray-900 text-2xl font-bold hover:text-gray-600">
+        <div className="px-4 py-2 truncate flex flex-col">
+          <a href={movie.url} className="text-indigo-700 text-2xl font-bold hover:text-indigo-600">
             {movie.title}
           </a>
           <p className="text-gray-600">Shared by: {movie.sharedBy}</p>
-          <p className="mt-2 text-lg">Description: </p>
-          <p className="text-gray-500">{movie.description}</p>
+          <p className="mt-2 text-md tex-gray-600">Description: </p>
+          <p className="text-gray-500 truncate">{movie.description}</p>
         </div>
       </div>
     </li>
