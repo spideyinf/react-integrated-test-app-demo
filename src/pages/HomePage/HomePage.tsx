@@ -14,6 +14,7 @@ const HomePage: FC = () => {
       setMovies(data);
       setLoading(false);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) return <h2 className="text-center pt-12 text-xl">Loading...</h2>;

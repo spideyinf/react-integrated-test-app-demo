@@ -44,6 +44,7 @@ const SharePage: FC = () => {
     if (!appLoading && !user) {
       navigate('/');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [appLoading, user]);
 
   if (appLoading) return <h2 className="text-center pt-12 text-xl">Loading...</h2>;

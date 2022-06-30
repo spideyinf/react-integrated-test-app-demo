@@ -1,4 +1,4 @@
-import { FormEventHandler, useContext, useMemo, useState } from 'react';
+import { FormEventHandler, useContext, useState } from 'react';
 import { Popover } from '@headlessui/react';
 import { LockClosedIcon, MailIcon } from '@heroicons/react/solid';
 import { MoviesContext } from '../App';

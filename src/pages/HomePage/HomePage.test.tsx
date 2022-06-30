@@ -40,9 +40,7 @@ describe('Test Home Page', () => {
 
   test('Video data', async () => {
     let movies: Movie[] = [];
-    const setMovies: any = jest.fn((data) => {
-      movies = data;
-    });
+    const setMovies: any = jest.fn((data) => (movies = data));
 
     render(
       <MoviesContext.Provider value={{ movies, setMovies, appLoading: false, user: null }}>
@@ -51,16 +49,6 @@ describe('Test Home Page', () => {
     );
     await waitFor(() => {
       expect(setMovies).toHaveBeenCalled();
-      // expect(movies.length).toBe(1);
-      // expect(movies).toEqual([
-      //   {
-      //     id: 1,
-      //     title: 'Demo',
-      //     url: 'https://www.youtube.com/embed/id',
-      //     description: 'Description',
-      //     sharedBy: 'test@gmail.com'
-      //   }
-      // ]);
     });
   });
 
