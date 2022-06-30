@@ -6,7 +6,7 @@ export const HomeMovieList: FC = () => {
   const { movies } = useContext(MoviesContext);
 
   return (
-    <ul className="flex flex-col items-center pt-8 space-y-8">
+    <ul data-testid="homeMovieList" className="flex flex-col items-center pt-8 space-y-8">
       {movies.length > 0 ? (
         movies.map((movie) => <HomeMovieItem key={movie.id} movie={movie} />)
       ) : (

@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const { user } = useContext(MoviesContext);
-  console.log('user :', user);
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

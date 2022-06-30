@@ -13,6 +13,7 @@ const HomeMovieItem: FC<Props> = ({ movie }) => {
   return (
     <li key={movie.id} className="col-span-1 flex shadow-sm rounded-md max-w-5xl">
       <iframe
+        data-testid="movieIframe"
         className={classNames(
           '',
           'flex-shrink-0 flex items-center justify-center text-white text-sm font-medium rounded-l-md'
@@ -29,7 +30,9 @@ const HomeMovieItem: FC<Props> = ({ movie }) => {
           </a>
           <p className="text-gray-600">Shared by: {movie.sharedBy}</p>
           <p className="mt-2 text-md tex-gray-600">Description: </p>
-          <p className="text-gray-500 truncate">{movie.description}</p>
+          <p data-testid="description" className="text-gray-500 truncate">
+            {movie.description}
+          </p>
         </div>
       </div>
     </li>

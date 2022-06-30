@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Home Page HomeMovieList Test 1`] = `
+<ul
+  class="flex flex-col items-center pt-8 space-y-8"
+  data-testid="homeMovieList"
+>
+  <li
+    class="col-span-1 flex shadow-sm rounded-md max-w-5xl"
+  >
+    <iframe
+      class="flex-shrink-0 flex items-center justify-center text-white text-sm font-medium rounded-l-md"
+      data-testid="movieIframe"
+      height="240"
+      src="https://www.youtube.com/embed/id"
+      title="Video 1"
+      width="360"
+    />
+    <div
+      class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate"
+    >
+      <div
+        class="px-4 py-2 truncate flex flex-col"
+      >
+        <a
+          class="text-indigo-700 text-2xl font-bold hover:text-indigo-600"
+          href="https://www.youtube.com/embed/id"
+        >
+          Video 1
+        </a>
+        <p
+          class="text-gray-600"
+        >
+          Shared by: 
+          test@gmail.com
+        </p>
+        <p
+          class="mt-2 text-md tex-gray-600"
+        >
+          Description: 
+        </p>
+        <p
+          class="text-gray-500 truncate"
+          data-testid="description"
+        >
+          Description
+        </p>
+      </div>
+    </div>
+  </li>
+  <li
+    class="col-span-1 flex shadow-sm rounded-md max-w-5xl"
+  >
+    <iframe
+      class="flex-shrink-0 flex items-center justify-center text-white text-sm font-medium rounded-l-md"
+      data-testid="movieIframe"
+      height="240"
+      src="https://www.youtube.com/embed/id2"
+      title="Video 2"
+      width="360"
+    />
+    <div
+      class="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate"
+    >
+      <div
+        class="px-4 py-2 truncate flex flex-col"
+      >
+        <a
+          class="text-indigo-700 text-2xl font-bold hover:text-indigo-600"
+          href="https://www.youtube.com/embed/id2"
+        >
+          Video 2
+        </a>
+        <p
+          class="text-gray-600"
+        >
+          Shared by: 
+          test2@gmail.com
+        </p>
+        <p
+          class="mt-2 text-md tex-gray-600"
+        >
+          Description: 
+        </p>
+        <p
+          class="text-gray-500 truncate"
+          data-testid="description"
+        >
+          Description2
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
+`;

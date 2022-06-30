@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/HomePage/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 import SharePage from './pages/SharePage';
 import { auth } from './utils/firebase';
