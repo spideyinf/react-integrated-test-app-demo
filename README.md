@@ -1,5 +1,6 @@
 # RMTN Entrance
 
+Project live Url: https://rmtn-entrance.web.app/
 React Movies App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using Typescript, [TailwindUI](https://tailwindui.com/). Firestore and Firebase authentication
 
