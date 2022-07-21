@@ -1,8 +1,10 @@
-# RMTN Entrance
+## React Movies App
 
 Project live Url: https://rmtn-entrance.web.app/
-React Movies App
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using Typescript, [TailwindUI](https://tailwindui.com/). Firestore and Firebase authentication
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) using Typescript, [TailwindUI](https://tailwindui.com/).
+
+Serverless with Firestore and Firebase authentication
 
 #### Commands
 
@@ -18,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   yarn start
 ```
 
-- Running test
+- Front end testing demo
 
 ```
   yarn test
@@ -35,5 +37,3 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ```
   yarn build
 ```
-
-##### Phuc Hoang (phuchoang.inf@gmail.com)

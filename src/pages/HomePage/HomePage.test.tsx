@@ -38,35 +38,6 @@ describe('Test Home Page', () => {
     expect(screen.getByText('No movies found')).toBeInTheDocument();
   });
 
-  test('Video data', async () => {
-    let movies: Movie[] = [];
-    const setMovies: any = jest.fn((data) => (movies = data));
-
-    render(
-      <MoviesContext.Provider value={{ movies, setMovies, appLoading: false, user: null }}>
-        <HomePage />
-      </MoviesContext.Provider>
-    );
-    await waitFor(() => {
-      expect(setMovies).toHaveBeenCalled();
-    });
-  });
-
-  test('HomeMovieItem Test', () => {
-    let movie: Movie = {
-      id: '1',
-      title: 'Demo',
-      url: 'https://www.youtube.com/embed/id',
-      description: 'Description',
-      sharedBy: 'test@gmail.com'
-    };
-
-    render(<HomeMovieItem movie={movie} />);
-    expect(screen.getByTestId('movieIframe')).toBeInTheDocument();
-    expect(screen.getByText(/Demo/i)).toBeInTheDocument();
-    expect(screen.getByTestId('description')).toHaveTextContent(movie.description);
-  });
-
   test('HomeMovieList Test', () => {
     let movies: Movie[] = [
       {
@@ -94,5 +65,34 @@ describe('Test Home Page', () => {
     );
     expect(screen.getByTestId('homeMovieList')).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('HomeMovieItem Test', () => {
+    let movie: Movie = {
+      id: '1',
+      title: 'Demo',
+      url: 'https://www.youtube.com/embed/id',
+      description: 'Description',
+      sharedBy: 'test@gmail.com'
+    };
+
+    render(<HomeMovieItem movie={movie} />);
+    expect(screen.getByTestId('movieIframe')).toBeInTheDocument();
+    expect(screen.getByText(/Demo/i)).toBeInTheDocument();
+    expect(screen.getByTestId('description')).toHaveTextContent(movie.description);
+  });
+
+  test('Video data', async () => {
+    let movies: Movie[] = [];
+    const setMovies: any = jest.fn((data) => (movies = data));
+
+    render(
+      <MoviesContext.Provider value={{ movies, setMovies, appLoading: false, user: null }}>
+        <HomePage />
+      </MoviesContext.Provider>
+    );
+    await waitFor(() => {
+      expect(setMovies).toHaveBeenCalled();
+    });
   });
 });
