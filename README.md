@@ -6,8 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The project target summary: 
 
-- Quick setup `Creat-react-app` with `Typescript` and fast integration serverless with Firestore and Firebase authentication.
-- Quick styling with `TailwindCSS` and `headless` ui
+- Quick setup `Creat-react-app` with `Typescript` and fast integration serverless with `Firestore` and `Firebase` authentication.
+- Quick styling with `TailwindCSS` and `headless` UI
 - Simple app with auth flow, user can login/register then they can search for any Youtube video and bookmark it as a favorite list.
 - General approach for testing: Unit test and Integration test with `Jest` and `testing-library/react`
 - General approach for end-to-end testing with `Puppeteer`
